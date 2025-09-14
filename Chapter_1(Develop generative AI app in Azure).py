@@ -84,7 +84,7 @@ rag_params = {
                 "index_name": "index_name",
                 "authentication": {
                     "type": "api_key",
-                    "key": search_key,
+                    "key": search_key, ##search type
                 }
             }
         }
@@ -101,3 +101,37 @@ response = chat_client.chat.completions.create(
 # Print the contextualized response
 completion = response.choices[0].message.content
 print(completion)
+
+
+
+#In order to make the search vector based
+
+rag_params = {
+    "data_sources": [
+        {
+            "type": "azure_search",
+            "parameters": {
+                "endpoint": search_url,
+                "index_name": "index_name",
+                "authentication": {
+                    "type": "api_key",
+                    "key": search_key,
+                },
+                # Params for vector-based query
+                "query_type": "vector",
+                "embedding_dependency": {
+                    "type": "deployment_name",
+                    "deployment_name": "<embedding_model_deployment_name>",
+                },
+            }
+        }
+    ],
+}
+
+#Prompt Flow is a development framework for defining flows that orchestrate interactions with an LLM.
+
+
+
+###########
+''' Fine-tune a language model with Azure AI Foundry'''
+###########
