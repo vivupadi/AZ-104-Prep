@@ -135,3 +135,14 @@ rag_params = {
 ###########
 ''' Fine-tune a language model with Azure AI Foundry'''
 ###########
+
+
+###########
+'''Implement a responsible generative AI solution in Azure AI Foundry '''
+
+"""Plan a Responsible AI solution
+- Map
+- Measure
+- Mitigate
+- Manage"""
+###########
