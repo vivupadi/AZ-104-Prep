@@ -146,3 +146,23 @@ rag_params = {
 - Mitigate
 - Manage"""
 ###########
+
+
+###########
+''' Evaluate generative AI performance in Azure AI Foundry portal '''
+
+"""Model Benchmarks:
+    - Accuracy
+    - Coherence
+    - Fluency
+    - GPT similarity"""
+
+"""AI assisted metrics
+    - Generation quality metrics
+    - Risk and safety metrics"""
+
+"""NLP metrics:
+    - BLEU - Bilingual Evaluation Understudy metrics
+    - METEOR - Metric for Evaluation of Translation with Explicit Ordering
+    - ROUGE - RecallOriented Understudy for Gisting Evaluation"""
+###########
