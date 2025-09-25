@@ -63,6 +63,22 @@ result = client.analyze(
 
 ###########
 '''Read text in Images'''
+
+'''
+Options:
+1. Azure AI Vision
+  - Optical Character Recognition
+  - Digital Asset Management (DAM)
+
+2. Azure AI Document Intelligence
+  - Form processing
+  - Prebuilt models
+  - Custom models
+
+3. Azure AI Content Understanding
+  - Multimodal Content Extraction
+  - Custom content analysis scenarios
+'''
 ###########
 
 ###########
