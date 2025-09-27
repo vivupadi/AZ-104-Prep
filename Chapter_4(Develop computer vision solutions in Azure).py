@@ -79,15 +79,90 @@ Options:
   - Multimodal Content Extraction
   - Custom content analysis scenarios
 '''
+
+'''
+from azure.ai.vision.imageanalysis import ImageAnalysisClient
+from azure.ai.vision.imageanalysis.models import VisualFeatures
+from azure.core.credentials import AzureKeyCredential
+
+client = ImageAnalysisClient(
+    endpoint="<YOUR_RESOURCE_ENDPOINT>",
+    credential=AzureKeyCredential("<YOUR_AUTHORIZATION_KEY>")
+)
+
+result = client.analyze(
+    image_data=<IMAGE_DATA_BYTES>, # Binary data from your image file
+    visual_features=[VisualFeatures.READ],
+    language="en",
+)'''
+
+
 ###########
 
 ###########
 '''Detect, analyze and recognize faces'''
+
+"""
+Uses:
+1. Face Detection
+2. Face attribute analysis
+3. Facial landmark location
+4. Face comparison
+5. Facial recognition
+6. Facial liveness"""
+
+
+"""
+from azure.ai.vision.face import FaceClient
+from azure.ai.vision.face.models import *
+from azure.core.credentials import AzureKeyCredential
+
+face_client = FaceClient(
+    endpoint="<YOUR_RESOURCE_ENDPOINT>",
+    credential=AzureKeyCredential("<YOUR_RESOURCE_KEY>"))
+    
+# Specify facial features to be retrieved
+features = [FaceAttributeTypeDetection01.HEAD_POSE,
+            FaceAttributeTypeDetection01.OCCLUSION,
+            FaceAttributeTypeDetection01.ACCESSORIES]
+
+# Use client to detect faces in an image
+with open("<IMAGE_FILE_PATH>", mode="rb") as image_data:
+    detected_faces = face_client.detect(
+        image_content=image_data.read(),
+        detection_model=FaceDetectionModel.DETECTION01,
+        recognition_model=FaceRecognitionModel.RECOGNITION01,
+        return_face_id=True,
+        return_face_attributes=features,
+    )
+        """
 ###########
 
 
 ###########
 '''Classify images'''
+
+"""
+from msrest.authentication import ApiKeyCredentials
+from azure.cognitiveservices.vision.customvision.prediction import CustomVisionPredictionClient
+
+
+ # Authenticate a client for the prediction API
+credentials = ApiKeyCredentials(in_headers={"Prediction-key": "<YOUR_PREDICTION_RESOURCE_KEY>"})
+prediction_client = CustomVisionPredictionClient(endpoint="<YOUR_PREDICTION_RESOURCE_ENDPOINT>",
+                                                 credentials=credentials)
+
+# Get classification predictions for an image
+image_data = open("<PATH_TO_IMAGE_FILE>"), "rb").read()
+results = prediction_client.classify_image("<YOUR_PROJECT_ID>",
+                                           "<YOUR_PUBLISHED_MODEL_NAME>",
+                                           image_data)
+
+# Process predictions
+for prediction in results.predictions:
+    if prediction.probability > 0.5:
+        print(image, ': {} ({:.0%})'.format(prediction.tag_name, prediction.probability))
+"""
 ###########
 
 
