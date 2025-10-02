@@ -209,6 +209,14 @@ for prediction in results.predictions:
 
 ###########
 '''Analyze video'''
+
+"""
+3 main Concepts:
+1. Azure Video Indexer capabilities
+2. Extract custom insights
+3. Use Azure Video Indexer widgets and APi's
+4. Deploy with Azure Resource Manager(ARM) template
+"""
 ###########
 
 
