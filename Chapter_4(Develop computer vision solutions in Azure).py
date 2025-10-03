@@ -222,9 +222,29 @@ for prediction in results.predictions:
 
 ###########
 '''Develop a vision-enabled generative AI application'''
+
+"""
+1. Deploy a multimodal model(Available in Az AI FOundry: Microsoft Phi-4, 
+OpenAI gpt 4o, OpenAI gpt-4o-mini)
+"""
 ###########
 
 
 ###########
 '''Generate images with AI'''
+
+"""
+Image generation based on prompts.
+
+Image generation models(like DAll E)
+Controls available with Dall E:
+  - resoluion (like 1024 x 1024)
+  - image style (like vivid, natural)
+  - image quality (standard or hd)
+
+  How to use image generation models:
+    - RestAPI
+    - OenAI Python SDK or .Net SDK.
+
+"""
 ###########
