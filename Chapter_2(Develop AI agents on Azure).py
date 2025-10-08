@@ -4,6 +4,14 @@
 
 ###########
 ''' Develop an AI agent with Azure AI Foundry Agent Service'''
+
+"""
+Components of AI Agent:
+- Model
+- Knowledge
+- Tool
+
+"""
 ###########
 
 ###########
